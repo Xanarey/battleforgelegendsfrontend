@@ -4,34 +4,64 @@
     border-radius: 15px;
     box-shadow: 0px 0px 10px 3px rgba(0, 255, 255, 0.3);
     color: #ffffff;
-    max-width: 500px;
+    max-width: 1400px; /* Увеличить ширину контейнера */
     margin: 20px auto;
     text-align: center;
+    box-sizing: border-box; /* Учитывать padding */
+}
+
+.player-search-title {
+    font-size: 30px;
 }
 
 .player-table {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.player-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #2a2a38;
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s;
+    gap: 4px;
+    margin-bottom: 4px;
 }
 
 .player-row:hover {
     background-color: #3a3a48;
 }
 
+.invite-button {
+    flex-basis: 25%; /* Фиксированная ширина */
+    padding: 5px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.invite-button:hover {
+    background-color: #6db1b1;
+}
+
+.player-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 800px;
+}
+
+.player-name, .player-status {
+    flex-grow: 1; /* Заставляет элементы расширяться */
+    margin-right: 100px; /* Добавляет отступ справа */
+}
+
 .player-name {
+    flex-basis: 30%; /* Фиксированная ширина */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1.2rem;
     color: #00ffff;
     text-shadow: 0 0 5px rgba(0, 255, 255, 0.8);
@@ -42,6 +72,10 @@
     color: #ff00ff;
     text-shadow: 0 0 5px rgba(255, 0, 255, 0.8);
 }
+
+
+
+
 
 .back-button {
     padding: 10px 20px;
@@ -58,3 +92,8 @@
     background-color: #555;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
+
+
+
+
+

@@ -9,6 +9,16 @@ const PlayerSearch = () => {
     const navigate = useNavigate();
     const [players, setPlayers] = useState([]);
     const [setStatus] = useState({});
+    const [currentUser, setCurrentUser] = useState('RazorStill');
+
+    const handleInvite = (player) => {
+        if (player.username !== currentUser) {
+            console.log(`${currentUser} пригласил ${player.username} в бой`);
+            // Отправка приглашения через WebSocket или HTTP
+        } else {
+            console.log('Нельзя пригласить себя');
+        }
+    };
 
     useEffect(() => {
         fetch('http://localhost:8080/users')
@@ -46,13 +56,30 @@ const PlayerSearch = () => {
         <div className="player-search-container">
             <h1 className="player-search-title">Список игроков</h1>
             <div className="player-table">
+                {/*{players.map((player) => (*/}
+                {/*    <div key={player.id} className="player-row">*/}
+                {/*        <div className="player-name">{player.username}</div>*/}
+                {/*        <div className="player-status">{player.status || 'Неизвестно'}</div>*/}
+                {/*    </div>*/}
+                {/*))}*/}
                 {players.map((player) => (
                     <div key={player.id} className="player-row">
                         <div className="player-name">{player.username}</div>
                         <div className="player-status">{player.status || 'Неизвестно'}</div>
+                        <button onClick={() => handleInvite(player)} className="invite-button">
+                            Пригласить в бой
+                        </button>
                     </div>
                 ))}
+
+
             </div>
+            <select onChange={(e) => setCurrentUser(e.target.value)}>
+                <option value="RazorStill">RazorStill</option>
+                <option value="DamageMan">DamageMan</option>
+                {/* Добавьте другие тестовые пользователи */}
+            </select>
+
 
             <button className="back-button" onClick={() => navigate('/')}>
                 Назад в меню
