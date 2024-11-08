@@ -53,8 +53,11 @@
 }
 
 .player-name, .player-status {
-    flex-grow: 1; /* Заставляет элементы расширяться */
-    margin-right: 100px; /* Добавляет отступ справа */
+    width: 200px; /* Установите фиксированную ширину */
+    text-align: center; /* Центрирует текст */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .player-name {

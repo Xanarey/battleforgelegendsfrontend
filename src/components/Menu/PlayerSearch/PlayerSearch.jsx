@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PlayerSearch.css';
@@ -9,7 +10,6 @@ const PlayerSearch = () => {
     const navigate = useNavigate();
     const [players, setPlayers] = useState([]);
     const [setStatus] = useState({});
-    const [currentUser, setCurrentUser] = useState('RazorStill');
 
     const handleInvite = (player) => {
         if (player.username !== currentUser) {
@@ -56,12 +56,6 @@ const PlayerSearch = () => {
         <div className="player-search-container">
             <h1 className="player-search-title">Список игроков</h1>
             <div className="player-table">
-                {/*{players.map((player) => (*/}
-                {/*    <div key={player.id} className="player-row">*/}
-                {/*        <div className="player-name">{player.username}</div>*/}
-                {/*        <div className="player-status">{player.status || 'Неизвестно'}</div>*/}
-                {/*    </div>*/}
-                {/*))}*/}
                 {players.map((player) => (
                     <div key={player.id} className="player-row">
                         <div className="player-name">{player.username}</div>
@@ -71,17 +65,9 @@ const PlayerSearch = () => {
                         </button>
                     </div>
                 ))}
-
-
             </div>
-            <select onChange={(e) => setCurrentUser(e.target.value)}>
-                <option value="RazorStill">RazorStill</option>
-                <option value="DamageMan">DamageMan</option>
-                {/* Добавьте другие тестовые пользователи */}
-            </select>
 
-
-            <button className="back-button" onClick={() => navigate('/')}>
+            <button className="back-button" onClick={() => navigate('/menu')}>
                 Назад в меню
             </button>
         </div>

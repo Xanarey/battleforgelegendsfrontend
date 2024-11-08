@@ -4,13 +4,15 @@ import Menu from './Menu/Menu.jsx';
 import '../App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import PlayerSearch from "./Menu/PlayerSearch/PlayerSearch.jsx";
+import Login from "./Login/Login.jsx";
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Menu/>}/>
-                <Route path="/search" element={<PlayerSearch/>}/>
+                <Route path="/" element={<Login />}/>
+                <Route path="/menu" element={<Menu />}/>
+                <Route path="/search" element={<PlayerSearch />}/>
             </Routes>
         </BrowserRouter>
     );
